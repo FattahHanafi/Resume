@@ -9,31 +9,42 @@
 \thispagestyle{empty}
 \usepackage{tabularx}
 \usepackage{makecell}
+\usepackage{fontawesome}
 
 \newcommand{\firstlastname}[1]{\noindent\textcolor{Blue}{\Huge{#1}}\vspace{0.3cm}\\}
 \newcommand{\subtitle}[1]{\noindent\textcolor{NavyBlue}{\Large{#1}}\\}
-\newcommand{\header}[1]{\vspace{0.5cm}\noindent\textcolor{NavyBlue}{\Large{#1}}\\\indent}
-\newcommand{\socila[2]{\}}
+\newcommand{\header}[1]{\noindent\textcolor{Blue}{\Large{#1}}\\\indent}
+\newcommand{\degree}[1]{\noindent\textcolor{NavyBlue}{\small{#1}}\\}
+\newcommand{\university}[1]{\noindent\textcolor{Black}{\footnotesize{#1}}\\}
+\newcommand{\details}[1]{\makecell[Xt]{\noindent\textcolor{Black}{\footnotesize{#1}}}\\}
+
 
 \begin{document}
 \begin{table}
     \centering
-    \begin{tabularx}{\textwidth}{X r}
-	    \makecell{\firstlastname{Fattah Hanafi}\subtitle{Robotics Engineer}} & \makecell{Beta\\AAAA}\\
+    \begin{tabularx}{\textwidth}{X r l}
+	\makecell[l]{\firstlastname{Fattah Hanafi}\subtitle{Robotics Engineer}} & \makecell[r]{(647) 975-3307\\hanafi.fattah@gmail.com\\github.com/FattahHanafi\\linkedin.com/in/fattah-hanafi/} & \makecell[c]{\faPhone\\\faEnvelopeO\\\faGithub\\\faLinkedin}\\
     \end{tabularx}
 \end{table}
+\noindent\rule{\textwidth}{0.4pt}
 
 \header{Profile}
 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
 
 \header{Experience}
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
 
-\header{Education}
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+\header{Education}\\
+\begin{table}
+    \centering
+    \noindent\begin{tabularx}{\textwidth}{lX}
+	\makecell[lt]{\degree{Ph.D. in Mechanical Engineering}\university{OntarioTech University}\university{2021-now}} & \details{Autonomous excavators on constructin sites. Perception, control, motion-planning, and safety.}
+    \makecell[lt]{\degree{M.Sc. in Mechanical Engineering}\university{Ferdowsi University of Mashhad}\university{2010-2013}} & \details{Achieved a real-time method to solve the complex inverse dynamic equations of a three DOF parallere 3-PSP robot.}
+    \makecell[lt]{\degree{B.Sc. in Mechanical Engineering}\university{Islamic Azad University}\university{2007-2009}} & \details{Developed a multi-DOF four-bar mechanism to follow the desired trajectory.}
+    \end{tabularx}
+\end{table}
+
 
 \header{Skills}
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
 
 
 \end{document}
