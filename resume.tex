@@ -1,8 +1,8 @@
 % !TEX program = xelatex
-\documentclass{letter}
+\documentclass[6pt]{letter}
 \usepackage{fontspec}
 \usepackage[dvipsnames]{xcolor}
-\usepackage{geometry}
+\usepackage[showframe]{geometry}
 \geometry{margin=1in}
 \setmainfont{[RobotoSlab-VariableFont_wght.ttf]}
 \setlength\parindent{1cm}
@@ -10,41 +10,76 @@
 \usepackage{tabularx}
 \usepackage{makecell}
 \usepackage{fontawesome}
+\DeclareFontFamily{U}{fontawesomeOne}{}
+\DeclareFontShape{U}{fontawesomeOne}{m}{n}
+  {<-> FontAwesome--fontawesomeone}{}
+\DeclareRobustCommand\FAone{\fontencoding{U}\fontfamily{fontawesomeOne}\selectfont}
+
+\usepackage{forloop}
+\usepackage{multicol}
 
 \newcommand{\firstlastname}[1]{\noindent\textcolor{Blue}{\Huge{#1}}\vspace{0.3cm}\\}
 \newcommand{\subtitle}[1]{\noindent\textcolor{NavyBlue}{\Large{#1}}\\}
-\newcommand{\header}[1]{\noindent\textcolor{Blue}{\Large{#1}}\\\indent}
-\newcommand{\degree}[1]{\noindent\textcolor{NavyBlue}{\small{#1}}\\}
-\newcommand{\university}[1]{\noindent\textcolor{Black}{\footnotesize{#1}}\\}
-\newcommand{\details}[1]{\makecell[Xt]{\noindent\textcolor{Black}{\footnotesize{#1}}}\\}
-
+\newcommand{\header}[1]{\noindent\textcolor{Blue}{\Large{#1}}\\}
+\newcommand{\degree}[1]{\noindent\textcolor{NavyBlue}{\textbf{\Small{#1}}}}
+\newcommand{\university}[1]{\noindent\textcolor{Black}{\footnotesize{#1}}}
+\newcommand{\universitydate}[1]{\noindent\textcolor{Black}{\footnotesize{ - (#1)}}}
+\newcommand{\details}[1]{\makecell[Xt]{\noindent\textcolor{Black}{\footnotesize{\faExchange \hspace{0.05cm} #1}}}}
+\newcommand{\skill}[1]{\def\score{#1} \newcounter{x} \forloop{x}{0}{\value{x} < \score}{\faStar}\forloop{x}{\score}{\value{x} < 5}{\textcolor{gray}{\faStarO}}}
 
 \begin{document}
 \begin{table}
     \centering
-    \begin{tabularx}{\textwidth}{X r l}
-	\makecell[l]{\firstlastname{Fattah Hanafi}\subtitle{Robotics Engineer}} & \makecell[r]{(647) 975-3307\\hanafi.fattah@gmail.com\\github.com/FattahHanafi\\linkedin.com/in/fattah-hanafi/} & \makecell[c]{\faPhone\\\faEnvelopeO\\\faGithub\\\faLinkedin}\\
+    \begin{tabularx}{\textwidth}{Xrl}
+	\makecell[l]{\firstlastname{Fattah Hanafi}\subtitle{Robotics Engineer}} & {\makecell[r]{\footnotesize{(647) 975-3307\\hanafi.fattah@gmail.com\\github.com/FattahHanafi\\linkedin.com/in/fattah-hanafi}} & \makecell[c]{\small{\faPhone\\\faEnvelopeO\\\faGithub\\\faLinkedin}}\\
     \end{tabularx}
 \end{table}
 \noindent\rule{\textwidth}{0.4pt}
 
 \header{Profile}
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+\indent There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
 
 \header{Experience}
 
 \header{Education}\\
 \begin{table}
     \centering
-    \noindent\begin{tabularx}{\textwidth}{lX}
-	\makecell[lt]{\degree{Ph.D. in Mechanical Engineering}\university{OntarioTech University}\university{2021-now}} & \details{Autonomous excavators on constructin sites. Perception, control, motion-planning, and safety.}
-    \makecell[lt]{\degree{M.Sc. in Mechanical Engineering}\university{Ferdowsi University of Mashhad}\university{2010-2013}} & \details{Achieved a real-time method to solve the complex inverse dynamic equations of a three DOF parallere 3-PSP robot.}
-    \makecell[lt]{\degree{B.Sc. in Mechanical Engineering}\university{Islamic Azad University}\university{2007-2009}} & \details{Developed a multi-DOF four-bar mechanism to follow the desired trajectory.}
+    \begin{tabularx}{\textwidth}{lX}
+	\makecell[lt]{\degree{Ph.D. in Mechanical Engineering}\\\university{OntarioTech University}\universitydate{2021-now}} & \details{Autonomous excavators on constructin sites. Perception, control, motion-planning, and safety.}\\[0.6cm]
+	\makecell[lt]{\degree{M.Sc. in Mechanical Engineering}\\\university{Ferdowsi University of Mashhad}\universitydate{2010-2013}} & \details{Achieved a real-time method to solve the complex inverse dynamic equations of a three DOF parallere 3-PSP robot.}\\[0.6cm]
+	\makecell[lt]{\degree{B.Sc. in Mechanical Engineering}\\\university{Islamic Azad University}\universitydate{2007-2009}} & \details{Developed a multi-DOF four-bar mechanism to follow the desired trajectory.}\\[0.6cm]
     \end{tabularx}
 \end{table}
 
-
-\header{Skills}
-
-
+\header{Skills}\\
+\vspace{-0.5cm}
+\setlength\multicolsep{0pt}
+\begin{multicols}{2}
+    \noindent
+\begin{table}
+	\small{\begin{tabularx}{\textwidth}{ll}
+	\degree{Technical Skills}\\
+	C/C++ & \skill{5}\\
+	ROS & \skill{5}\\
+	SolidWorks & \skill{5}\\
+	Linux & \skill{4}\\
+	MATLAB & \skill{4}\\
+	Embedded Systems & \skill{4}\\
+	OpenGL & \skill{3}\\
+	Python & \skill{2}\\
+\end{tabularx}}
+\end{table}
+\columnbreak\\
+\noindent
+\begin{table}
+    \small{\begin{tabularx}{\textwidth}{ll}
+    \degree{Soft Skills}\\
+	Teamwork & \skill{5}\\
+	Creative Thinking & \skill{5}\\
+	Project Management & \skill{5}\\
+	Leadership & \skill{4}\\
+	Strategic Planning & \skill{3}\\
+\end{tabularx}}
+\end{table}
+\end{multicols}
 \end{document}
