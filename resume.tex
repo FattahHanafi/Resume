@@ -1,85 +1,105 @@
 % !TEX program = xelatex
-\documentclass[6pt]{letter}
+\documentclass{letter}
 \usepackage{fontspec}
 \usepackage[dvipsnames]{xcolor}
-\usepackage[showframe]{geometry}
-\geometry{margin=1in}
+\usepackage{geometry}
+%\usepackage[showframe]{geometry}
+\geometry{margin=0.75in}
 \setmainfont{[RobotoSlab-VariableFont_wght.ttf]}
 \setlength\parindent{1cm}
 \thispagestyle{empty}
 \usepackage{tabularx}
 \usepackage{makecell}
 \usepackage{fontawesome}
-\DeclareFontFamily{U}{fontawesomeOne}{}
-\DeclareFontShape{U}{fontawesomeOne}{m}{n}
-  {<-> FontAwesome--fontawesomeone}{}
-\DeclareRobustCommand\FAone{\fontencoding{U}\fontfamily{fontawesomeOne}\selectfont}
-
 \usepackage{forloop}
 \usepackage{multicol}
 
-\newcommand{\firstlastname}[1]{\noindent\textcolor{Blue}{\Huge{#1}}\vspace{0.3cm}\\}
-\newcommand{\subtitle}[1]{\noindent\textcolor{NavyBlue}{\Large{#1}}\\}
+\newcommand{\firstlastname}[1]{\noindent\textcolor{Blue}{\Huge{#1}}}
+\newcommand{\subtitle}[1]{\noindent\textcolor{NavyBlue}{\Large{#1}}}
 \newcommand{\header}[1]{\noindent\textcolor{Blue}{\Large{#1}}\\}
 \newcommand{\degree}[1]{\noindent\textcolor{NavyBlue}{\textbf{\Small{#1}}}}
 \newcommand{\university}[1]{\noindent\textcolor{Black}{\footnotesize{#1}}}
 \newcommand{\universitydate}[1]{\noindent\textcolor{Black}{\footnotesize{ - (#1)}}}
-\newcommand{\details}[1]{\makecell[Xt]{\noindent\textcolor{Black}{\footnotesize{\faExchange \hspace{0.05cm} #1}}}}
+\newcommand{\details}[1]{\makecell[Xt]{\noindent\textcolor{Black}{\footnotesize{\faBullseye\hspace{0.05cm} #1}}}}
 \newcommand{\skill}[1]{\def\score{#1} \newcounter{x} \forloop{x}{0}{\value{x} < \score}{\faStar}\forloop{x}{\score}{\value{x} < 5}{\textcolor{gray}{\faStarO}}}
 
 \begin{document}
 \begin{table}
     \centering
-    \begin{tabularx}{\textwidth}{Xrl}
-	\makecell[l]{\firstlastname{Fattah Hanafi}\subtitle{Robotics Engineer}} & {\makecell[r]{\footnotesize{(647) 975-3307\\hanafi.fattah@gmail.com\\github.com/FattahHanafi\\linkedin.com/in/fattah-hanafi}} & \makecell[c]{\small{\faPhone\\\faEnvelopeO\\\faGithub\\\faLinkedin}}\\
+    \begin{tabularx}{\textwidth}{X r l}
+	\makecell[l]{\firstlastname{Fattah Hanafi}\\\subtitle{Robotics Engineer}} & \makecell[r]{(647) 975-3307\\hanafi.fattah@gmail.com\\github.com/FattahHanafi\\linkedin.com/in/fattah-hanafi} & \makecell[c]{\faPhone\\\faEnvelopeO\\\faGithub\\\faLinkedin}
     \end{tabularx}
 \end{table}
 \noindent\rule{\textwidth}{0.4pt}
 
 \header{Profile}
-\indent There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+\indent\small{I am a Robotics Engineer with over a decade of extensive experience in mechanical analysis and software development for robotics applications. Throughout my career, I have held several positions where I designed and developed a wide range of robots, including industrial-grade 6DOF serial manipulators, 2500kg Stewart platforms, construction excavators, and agricultural tractors. Most of the products I was involved in were designed as commercial products with tight deadlines and resulted in successful, profitable products. I have also demonstrated my ability to manage robotics teams, as seen in my previous role as robotics team manager at Hamgar Toos. My enthusiasm, professionalism, expertise, and experience in both mechanical and software development make me a valuable resource for your company.}
 
 \header{Experience}
+\begin{table}
+	\centering
+    \begin{tabularx}{\textwidth}{>{\hsize=.33\textwidth}XX}
+	\makecell[tr]{
+	    \degree{Research Assistant}\\
+	    \university{AVEC Lab}
+	    \universitydate{2021-now}
+	} &
+	\makecell[tl]{
+	    \details{Implemented real-time C++ applications to control the excavator's motion on construction sites.}\\
+	    \details{Developed a real-time perception algorithm to capture the surrounding environment via LiDAR and depth camera.}\\
+	    \details{Implemented a ROS2 package to visualize, monitor, and control the excavators.}\\
+	    \details{Developed a semi-realtime Python program to optimize the route of a tractor in a farm with obstacles.}\\[0.3cm]
+	}\\
+	\makecell[tr]{
+	    \degree{Engineering Team Manager}\\
+	    \university{C1-Tech}
+	    \universitydate{2017-2021}
+	} &
+	\makecell[tl]{
+	    \details{Designed and developed a surgery operation room automation panel to control temperature, light, humidity, curtains, and inter-communication}\\
+	    \details{Sold the developed panel to 7 different hospitals and installed in more than 60 operation rooms}\\[0.3cm]
+        }\\
+	\makecell[tr]{
+	    \degree{Robotics Team Manager}\\
+	    \university{Hamgar Toos Co.}
+	    \universitydate{2016-2018}\\
+	    \university{FUM Robotics Lab}
+	    \universitydate{2012-2016}
+	} &
+	\makecell[tl]{
+	    \details{Design, analyses, motion generation, and software development of industrial grade robots such as: FUM-6R-20, FUM-SCARA-V2, FUM-Stewart-M450, FUM-Stewart-2500kg, and FUM-Delta}\\
+	    \details{Kinematics and dynamics analysis as well as simulation verification of ten different industrial-grade serial and parallel robots using SolidWorks Motion, Simulink, and MATLAB.}\\
+	    \details{Developed the trajectory generation algorithm for each robot.}\\
+	    \details{Lead a team of ten mechanical and software engineers to develop a real-time software from scratch to control the program parsing, motion generation, interrupt and IO handeling of robots.}\\
+	    \details{Made use of CANOpen, EtherCAT, Profibus, and RS-485 communication prootcols to control different servo drives.}\\
+	}\\
+	\end{tabularx}
+\end{table}
 
 \header{Education}\\
 \begin{table}
     \centering
-    \begin{tabularx}{\textwidth}{lX}
-	\makecell[lt]{\degree{Ph.D. in Mechanical Engineering}\\\university{OntarioTech University}\universitydate{2021-now}} & \details{Autonomous excavators on constructin sites. Perception, control, motion-planning, and safety.}\\[0.6cm]
-	\makecell[lt]{\degree{M.Sc. in Mechanical Engineering}\\\university{Ferdowsi University of Mashhad}\universitydate{2010-2013}} & \details{Achieved a real-time method to solve the complex inverse dynamic equations of a three DOF parallere 3-PSP robot.}\\[0.6cm]
-	\makecell[lt]{\degree{B.Sc. in Mechanical Engineering}\\\university{Islamic Azad University}\universitydate{2007-2009}} & \details{Developed a multi-DOF four-bar mechanism to follow the desired trajectory.}\\[0.6cm]
+    \begin{tabularx}{\textwidth}{>{\hsize=.33\textwidth}XX}
+	\makecell[tr]{\degree{Ph.D. in Mechanical Engineering}\\\university{OntarioTech University}\universitydate{2021-now}} & \details{Autonomous excavators on construction sites. Perception, control, motion-planning, and safety.}\\[0.6cm]
+	\makecell[tr]{\degree{M.Sc. in Mechanical Engineering}\\\university{Ferdowsi University}\universitydate{2010-2013}} & \details{A real-time method to calculate the inverse dynamics equations of a three DOF parallere 3-PSP robot.}\\[0.6cm]
+	\makecell[tr]{\degree{B.Sc. in Mechanical Engineering}\\\university{Islamic Azad University}\universitydate{2007-2009}} & \details{Developed a multi-DOF four-bar mechanism to follow the desired trajectory.}\\
     \end{tabularx}
 \end{table}
 
 \header{Skills}\\
-\vspace{-0.5cm}
-\setlength\multicolsep{0pt}
-\begin{multicols}{2}
-    \noindent
 \begin{table}
-	\small{\begin{tabularx}{\textwidth}{ll}
-	\degree{Technical Skills}\\
-	C/C++ & \skill{5}\\
-	ROS & \skill{5}\\
-	SolidWorks & \skill{5}\\
-	Linux & \skill{4}\\
-	MATLAB & \skill{4}\\
-	Embedded Systems & \skill{4}\\
-	OpenGL & \skill{3}\\
-	Python & \skill{2}\\
-\end{tabularx}}
+    \centering
+    \begin{tabularx}{\textwidth}{>{\hsize=.30\textwidth}r>{\hsize=0.20\textwidth}l>{\hsize=.30\textwidth}r>{\hsize=.20\textwidth}l}
+	\degree{Technical Skills} & & \degree{Soft Skills} & \\
+	C/C++ & \skill{5} & Teamwork & \skill{5}\\
+	ROS & \skill{5} & Creative Thinking & \skill{5}\\
+	SolidWorks & \skill{5} & Project Management & \skill{5}\\
+	Linux & \skill{4} & Leadership & \skill{4}\\
+	MATLAB & \skill{4} & Strategic Planning & \skill{3}\\
+	Embedded Systems & \skill{4} & & \\
+	OpenGL & \skill{3} & & \\
+	Python & \skill{2} & & \\
+\end{tabularx}
 \end{table}
-\columnbreak\\
-\noindent
-\begin{table}
-    \small{\begin{tabularx}{\textwidth}{ll}
-    \degree{Soft Skills}\\
-	Teamwork & \skill{5}\\
-	Creative Thinking & \skill{5}\\
-	Project Management & \skill{5}\\
-	Leadership & \skill{4}\\
-	Strategic Planning & \skill{3}\\
-\end{tabularx}}
-\end{table}
-\end{multicols}
+
 \end{document}
