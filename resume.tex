@@ -4,7 +4,7 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{geometry}
 %\usepackage[showframe]{geometry}
-\geometry{margin=0.75in, top=0.5in}
+\geometry{margin=0.65in, top=0.65in}
 % \setmainfont{[RobotoSlab-VariableFont_wght.ttf]}
 \setmainfont{[Ubuntu-Regular.ttf]}
 \setlength\parindent{1cm}
@@ -16,6 +16,14 @@
 \usepackage{multicol}
 \usepackage{pgffor}
 \usepackage{xifthen}
+\usepackage{hyperref}
+\hypersetup{%
+  colorlinks=true,% hyperlinks will be black
+  urlcolor=blue,
+  linkbordercolor=NavyBlue,% hyperlink borders will be red
+  % urlbordercolor={0 0 1},
+  pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+}
 
 \usepackage[most]{tcolorbox}
 \colorlet{LightLavender}{Lavender!40!}
@@ -26,15 +34,17 @@
 \newcommand{\firstlastname}[1]{\noindent\textcolor{Blue}{\Huge{#1}}}
 \newcommand{\subtitle}[1]{\noindent\textcolor{NavyBlue}{\Large{#1}}}
 \newcommand{\header}[1]{\noindent\textcolor{Blue}{\Large{#1}}\\}
-\newcommand{\degree}[1]{\noindent\textcolor{NavyBlue}{\textbf{\small{#1}}}}
-\newcommand{\university}[1]{\noindent\textcolor{Black}{\footnotesize{#1}}}
-\newcommand{\universitydate}[1]{\noindent\textcolor{Black}{\footnotesize{ - (#1)}}}
+\newcommand{\jobtitle}[1]{\makecell[Xr]{\noindent\textcolor{NavyBlue}{\textbf{\small{#1}}}}\\}
+\newcommand{\skilltitle}[1]{\noindent\textcolor{NavyBlue}{\textbf{\small{#1}}}}
+\newcommand{\company}[1]{\makecell[Xr]{\noindent\textcolor{Black}{\footnotesize{#1}}}}
+\newcommand{\companydate}[1]{\makecell[Xr]{\noindent\textcolor{Black}{\footnotesize{ - (#1)}}}\\}
+\newcommand{\companylink}[2]{\makecell[Xr]{\noindent\href{#1}{\footnotesize{#2}}}\\}
 \newcommand{\details}[1]{\makecell[Xt]{\noindent\textcolor{Black}{\footnotesize{\faBullseye\hspace{0.05cm} #1}}}}
 \newcommand{\skill}[1]{\foreach \x in {0,...,4}{\ifthenelse{\x < #1}{\faStar}{\textcolor{gray}\faStarO}}}
 
 \begin{document}
 \begin{tabularx}{0.9\textwidth}{X r l}
-	\makecell[l]{\firstlastname{Fattah Hanafi} \\\subtitle{Robotics Engineer}} & \makecell[r]{(647) 975-3307\\hanafi.fattah@gmail.com\\github.com/FattahHanafi\\linkedin.com/in/fattah-hanafi} & \makecell[c]{\faPhone\\\faEnvelopeO\\\faGithub\\\faLinkedin}
+	\makecell[l]{\firstlastname{Fattah Hanafi} \\\subtitle{Robotics Engineer}} & \makecell[r]{(647) 975-3307\\\href{mailto:hanafi.fattah@gmail.com}{hanafi.fattah@gmail.com}\\\href{https://github.com/FattahHanafi}{github.com/FattahHanafi}\\\href{https://www.linkedin.com/in/fattah-hanafi/}{linkedin.com/in/fattah-hanafi}} & \makecell[c]{\faPhone\\\faEnvelopeO\\\faGithub\\\faLinkedin}
 \end{tabularx}\\
 \noindent\rule{\textwidth}{0.4pt}
 
@@ -44,9 +54,10 @@
 \header{Experience}
 \begin{tabularx}{\textwidth}{>{\hsize=.25\textwidth}XX}
 	\makecell[tr]{
-	\degree{Research Assistant}                                                                                                                                                                                                            \\
-		\university{AVEC Lab}
-		\universitydate{2021-now}
+		\jobtitle{Research Assistant}
+		\company{AVEC Lab}
+		\companydate{2021-now}
+		\companylink{https://www.avec-lab.com/}{avec-lab.com}
 	} &
 	\makecell[tl]{
 	\details{Utilized C++ programming to develop and implement real-time applications on a dSpace embedded controller, enabling autonomous control of mobile excavators at construction sites.	}                                            \\
@@ -56,49 +67,78 @@
 	\details{Developed a Python program capable of real-time route optimization in obstacle-filled environments, enhancing operational efficiency.}                                                                                        \\[0.3cm]
 	}                                                                                                                                                                                                                                      \\
 	\makecell[tr]{
-	\degree{Engineering Team Manager}                                                                                                                                                                                                      \\
-		\university{C1-Tech}
-		\universitydate{2017-2021}
+		\jobtitle{Engineering Team Manager}
+		\company{C1-Tech}
+		\companydate{2017-2021}
+		\companylink{https://www.c1tech.co}{c1tech.co}
 	} &
 	\makecell[tl]{
 	\details{Designed and developed an advanced automation panel for surgery operation rooms, enabling centralized control of temperature, lighting, humidity, curtains, and inter-communication systems.}                                 \\
 	\details{Successfully marketed and sold the developed automation panel to seven hospitals, resulting in installations across more than 60 operation rooms.}                                                                            \\[0.3cm]
 	}                                                                                                                                                                                                                                      \\
 	\makecell[tr]{
-	\degree{Robotics Team Manager}                                                                                                                                                                                                         \\
-		\university{Hamgar Toos Co.}
-	\universitydate{2016-2018}                                                                                                                                                                                                             \\
-		\university{FUM Robotics Lab}
-		\universitydate{2012-2016}
+		\jobtitle{Robotics Team Manager}
+		\company{Hamgar Toos Co.}
+		\companydate{2016-2018}
+		\companylink{http://en.hamgartoos.com/}{en.hamgartoos.com}
+		\company{FUM Robotics Lab}
+		\companydate{2012-2016}
+		\companylink{https://www.fum-care.com/}{fum-care.com}
 	} &
 	\makecell[tl]{
+	\details{Led a team of ten mechanical and software engineers in the development of a real-time software system from scratch, which encompassed program parsing, motion generation, interrupt handling, and IO control for the robots.} \\
 	\details{Designed, analyzed, and developed C++ software on Beckhoff controller for a range of industrial-grade robots, including models such as FUM-6R-20, FUM-SCARA-V2, FUM-Stewart-M450, FUM-Stewart-2500kg, and FUM-Delta.}         \\
 	\details{Conducted kinematics and dynamics analysis, as well as simulation verification, for ten distinct industrial-grade serial and parallel robots, utilizing tools such as SolidWorks Motion, Simulink, and MATLAB.}               \\
-	\details{Developed trajectory generation algorithms specific to each robot, ensuring precise and efficient motion planning.}                                                                                                           \\
+	\details{Developed trajectory generation algorithms, ensuring precise and efficient motion planning, tailored based on robot's specifications.}                                                                                        \\
 	\details{Devised a vision-based calibration process to enhance the accuracy and calibration of the robots.}                                                                                                                            \\
-	\details{Led a team of ten mechanical and software engineers in the development of a real-time software system from scratch, which encompassed program parsing, motion generation, interrupt handling, and IO control for the robots.} \\
 	\details{Employed various communication protocols, including CANOpen, EtherCAT, Profibus, and RS-485, to effectively control different servo drives.}                                                                                  \\
 	}                                                                                                                                                                                                                                      \\
-\end{tabularx}
-
-\header{Education}\\
-\begin{tabularx}{\textwidth}{>{\hsize=.25\textwidth}XX}
-	\makecell[tr]{\degree{Ph.D. in Mechanical Engineering} \\\university{OntarioTech University}\universitydate{2021-now}} & \details{Autonomous excavators on construction sites. Perception, control, motion-planning, and safety.}\\[0.6cm]
-	\makecell[tr]{\degree{M.Sc. in Mechanical Engineering} \\\university{Ferdowsi University}\universitydate{2010-2013}} & \details{A real-time method to calculate the inverse dynamics equations of a three DOF parallere 3-PSP robot.}\\[0.6cm]
-	\makecell[tr]{\degree{B.Sc. in Mechanical Engineering} \\\university{Islamic Azad University}\universitydate{2007-2009}} & \details{Developed a multi-DOF four-bar mechanism to follow the desired trajectory.}\\
+	\makecell[tr]{
+		\jobtitle{CEO and Co-Founder}
+		\company{Mutau Co.}
+		\companydate{2008-2012}
+		\companylink{https://mutau.ir/}{mutau.ir}
+	} &
+	\makecell[tl]{
+	\details{Played a key role in guiding the company to achieve significant sales and revenue growth by exploring new market opportunities and diversifying our product line.}                                                            \\
+	\details{Collaboratively led R\&D efforts that resulted in the development of an advanced 3D printer model, contributing to the company's reputation as an emerging leader in the industry.}                                           \\
+	\details{Prioritized employee well-being and streamlined operations, leading to improved workplace satisfaction and increased efficiency, helping us achieve notable cost savings in production.}                                      \\[0.3cm]
+	}
 \end{tabularx}
 
 \header{Skills}\\
 \begin{tabularx}{\textwidth}{rXrXrX}
-	\degree{Technical Skills} &           & \degree{Technical Skills} &           & \degree{Soft Skills} &           \\
-	C/C++                     & \skill{5} & MATLAB                    & \skill{4} & Teamwork             & \skill{5} \\
-	ROS2                      & \skill{5} & Embedded Systems          & \skill{4} & Creative Thinking    & \skill{5} \\
-	SolidWorks                & \skill{5} & Python                    & \skill{3} & Project Management   & \skill{5} \\
-	Linux                     & \skill{4} & OpenGL                    & \skill{3} & Leadership           & \skill{4} \\
-	Git                       & \skill{4} &                           &           & Strategic Planning   & \skill{3} \\
+	\skilltitle{Technical Skills} &           & \skilltitle{Technical Skills} &           & \skilltitle{Soft Skills} &           \\
+	C/C++                       & \skill{5} & MATLAB                      & \skill{5} & Teamwork               & \skill{5} \\
+	ROS2                        & \skill{5} & Simulink                    & \skill{5} & Creative Thinking      & \skill{5} \\
+	Embedded Systems            & \skill{5} & Python                      & \skill{5} & Project Management     & \skill{5} \\
+	SolidWorks                  & \skill{5} & CUDA                        & \skill{4} & Leadership             & \skill{5} \\
+	Linux                       & \skill{4} & OpenGL                      & \skill{3} & Strategic Planning     & \skill{4} \\
+	Git                         & \skill{4} &                             &           &                        & \\
 \end{tabularx}
+
+\newpage
+\begin{tabularx}{0.9\textwidth}{X r l}
+	\makecell[l]{\firstlastname{Fattah Hanafi} \\\subtitle{Robotics Engineer}} & \makecell[r]{(647) 975-3307\\\href{mailto:hanafi.fattah@gmail.com}{hanafi.fattah@gmail.com}\\\href{https://github.com/FattahHanafi}{github.com/FattahHanafi}\\\href{https://www.linkedin.com/in/fattah-hanafi/}{linkedin.com/in/fattah-hanafi}} & \makecell[c]{\faPhone\\\faEnvelopeO\\\faGithub\\\faLinkedin}
+\end{tabularx}\\
+\noindent\rule{\textwidth}{0.4pt}
+
+\header{Education}\\
+\begin{tabularx}{\textwidth}{>{\hsize=.25\textwidth}XX}
+	\makecell[tr]{\jobtitle{Ph.D. in Mechanical Engineering}\company{OntarioTech University}\companydate{2021-now}} & \details{Autonomous excavators on construction sites. Perception, control, motion-planning, and safety.}\\[0.6cm]
+	\makecell[tr]{\jobtitle{M.Sc. in Mechanical Engineering}\company{Ferdowsi University}\companydate{2010-2013}} & \details{A real-time method to calculate the inverse dynamics equations of a three DOF parallere 3-PSP robot.}\\[0.6cm]
+	\makecell[tr]{\jobtitle{B.Sc. in Mechanical Engineering}\company{Islamic Azad University}\companydate{2007-2009}} & \details{Developed a multi-DOF four-bar mechanism to follow the desired trajectory.}
+\end{tabularx}\\
+
+\header{Publications and Patents}\\
+\begin{tabularx}{\textwidth}{>{\hsize=.25\textwidth}XX}
+	\makecell[tr]{\company{Agriculture}\companydate{2022}} & \details{Optimal Path Generation with Obstacle Avoidance and Subfield Connection for an Autonomous Tractor}\\
+	\makecell[tr]{\company{1st IECMA}\companydate{2022}} & \details{A real-time estimation method of soil-bucket interaction of an autonomous excavator via marching cube and constructive solid geometry methods}\\
+	\makecell[tr]{\company{8th ECSA}\companydate{2021}} & \details{Collaborative tracking control strategy for autonomous excavation of a hydraulic excavator}\\
+	\makecell[tr]{\company{8th ECSA}\companydate{2021}} & \details{Surface Reconstruction for Ground Map Generation in Autonomous Excavation}\\
+	\makecell[tr]{\company{5th ICRoM}\companydate{2017}} & \details{Explicit Inverse Kinematic Solution for the Industrial FUM Articulated Arm using Dual Quaternion Approach}\\
+	\makecell[tr]{\company{AMM}\companydate{2015}} & \details{Effect of Link Tolerance and Joint Clearance on End-Effector Positioning of the 3-PSP Manipulator Using Taguchi Method}\\
+	\makecell[tr]{\company{Patent}\companydate{2012}} & \details{Design a 3-Axis CNC with Laser CMM Ability}\\
+\end{tabularx}\\
+
 \end{document}
-
-
-
-
