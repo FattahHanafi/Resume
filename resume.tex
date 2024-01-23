@@ -39,7 +39,7 @@
 \newcommand{\company}[1]{\makecell[Xr]{\noindent\textcolor{Black}{\footnotesize{#1}}}}
 \newcommand{\companydate}[1]{\makecell[Xr]{\noindent\textcolor{Black}{\footnotesize{ - (#1)}}}\\}
 \newcommand{\companylink}[2]{\makecell[Xr]{\noindent\href{#1}{\footnotesize{#2}}}\\}
-\newcommand{\details}[1]{\makecell[Xt]{\noindent\textcolor{Black}{\footnotesize{\faBullseye\hspace{0.05cm} #1}}}}
+\newcommand{\details}[1]{\makecell[Xt]{\noindent\textcolor{Black}{\footnotesize{\faChevronRight\hspace{0.05cm} #1}}}}
 \newcommand{\skill}[1]{\foreach \x in {0,...,4}{\ifthenelse{\x < #1}{\faStar}{\textcolor{gray}\faStarO}}}
 
 \begin{document}
@@ -49,10 +49,21 @@
 \noindent\rule{\textwidth}{0.4pt}
 
 \header{Profile}
-\indent\small{I am a Robotics Engineer with over a decade of extensive experience in mechanical analysis and software development for robotics applications. Throughout my career, I have held several positions where I designed and developed a wide range of robots, including industrial-grade 6DOF serial manipulators, 2500kg Stewart platforms, and mobile construction excavators. Most of the products I was involved in were designed as commercial products with tight deadlines and resulted in successful, profitable products. I have also demonstrated my ability to manage robotics teams, as seen in my previous role as robotics team manager at Hamgar Toos. My enthusiasm, professionalism, expertise, and experience in both mechanical and software development make me a valuable resource for your company.}
+\indent\small{I am a Robotics Engineer with over a decade of extensive experience in mechanical analysis and software development for robotics applications. Throughout my career, I have held several positions where I designed and developed a wide range of robots, including industrial-grade 6DOF serial manipulators, 2500kg Stewart platforms, and mobile construction excavators. Most of the products I was involved in were designed as commercial products with tight deadlines resulting in successful, profitable products. I have also demonstrated my ability to manage robotics teams, as seen in my previous role as robotics team manager at Hamgar Toos. My enthusiasm, professionalism, expertise, and experience in both mechanical and software development make me a valuable resource for your company.}
 
 \header{Experience}
 \begin{tabularx}{\textwidth}{>{\hsize=.25\textwidth}XX}
+	\makecell[tr]{
+		\jobtitle{Mechatronic Engineer}
+		\company{Halo Beauty Co,}
+		\companydate{2023-2024}
+		\companylink{https://www.halobraid.com/}{halobraid.com}
+	} &
+	\makecell[tl]{
+	\details{Designed a microactuator to automate the hair-grabbing process.    }                                                                                                                                                  \\
+	\details{Improved the quality and speed of hair braiding by implementing the fully automated process.}                                                                                                                         \\
+	\details{Mechanically designed the actuator for R\&D process and prepared the manufacturing drafts for mass production.}                                                                                                       \\[0.3cm]
+	}                                                                                                                                                                                                                              \\
 	\makecell[tr]{
 		\jobtitle{Research Assistant}
 		\company{AVEC Lab}
@@ -60,12 +71,12 @@
 		\companylink{https://www.avec-lab.com/}{avec-lab.com}
 	} &
 	\makecell[tl]{
-	\details{Utilized C++ programming to develop and implement real-time applications on a dSpace embedded controller, enabling autonomous control of mobile excavators at construction sites.	}                                            \\
-	\details{Designed and implemented a real-time perception algorithm that effectively combines LiDAR and depth camera sensor data to capture and analyze the surrounding environment using PCL and OpenCV.}                              \\
-	\details{Created a customized ROS2 package to provide comprehensive visualization, monitoring, and control capabilities for the excavators.}                                                                                           \\
-	\details{Developed a customized GUI software using OpenGL to establish communication with an embedded controller via UDP, enabling comprehensive control of excavator operations.}                                                     \\
-	\details{Developed a Python program capable of real-time route optimization in obstacle-filled environments, enhancing operational efficiency.}                                                                                        \\[0.3cm]
-	}                                                                                                                                                                                                                                      \\
+	\details{Utilized C++ programming to develop and implement real-time applications on a dSpace embedded controller, enabling autonomous control of mobile excavators at construction sites.	}                                   \\
+	\details{Designed and implemented a real-time perception algorithm that effectively combines LiDAR and depth camera sensor data to capture and analyze the surrounding environment using PCL and OpenCV.}                      \\
+	\details{Created a customized ROS2 package to provide comprehensive visualization, monitoring, and control capabilities for the excavators.}                                                                                   \\
+	\details{Developed a customized GUI software using OpenGL to establish communication with an embedded controller via UDP, enabling comprehensive control of excavator operations.}                                             \\
+	\details{Developed a Python program capable of real-time route optimization in obstacle-filled environments, enhancing operational efficiency.}                                                                                \\[0.3cm]
+	}                                                                                                                                                                                                                              \\
 	\makecell[tr]{
 		\jobtitle{Engineering Team Manager}
 		\company{C1-Tech}
@@ -73,9 +84,9 @@
 		\companylink{https://www.c1tech.co}{c1tech.co}
 	} &
 	\makecell[tl]{
-	\details{Designed and developed an advanced automation panel for surgery operation rooms, enabling centralized control of temperature, lighting, humidity, curtains, and inter-communication systems.}                                 \\
-	\details{Successfully marketed and sold the developed automation panel to seven hospitals, resulting in installations across more than 60 operation rooms.}                                                                            \\[0.3cm]
-	}                                                                                                                                                                                                                                      \\
+	\details{Designed and developed an advanced automation panel for surgery operation rooms, enabling centralized control of temperature, lighting, humidity, curtains, and inter-communication systems.}                         \\
+	\details{Successfully marketed and sold the developed automation panel to seven hospitals, resulting in installations across more than 60 operation rooms.}                                                                    \\[0.3cm]
+	}                                                                                                                                                                                                                              \\
 	\makecell[tr]{
 		\jobtitle{Robotics Team Manager}
 		\company{Hamgar Toos Co.}
@@ -86,13 +97,13 @@
 		\companylink{https://www.fum-care.com/}{fum-care.com}
 	} &
 	\makecell[tl]{
-	\details{Led a team of ten mechanical and software engineers in the development of a real-time software system from scratch, which encompassed program parsing, motion generation, interrupt handling, and IO control for the robots.} \\
-	\details{Designed, analyzed, and developed C++ software on Beckhoff controller for a range of industrial-grade robots, including models such as FUM-6R-20, FUM-SCARA-V2, FUM-Stewart-M450, FUM-Stewart-2500kg, and FUM-Delta.}         \\
-	\details{Conducted kinematics and dynamics analysis, as well as simulation verification, for ten distinct industrial-grade serial and parallel robots, utilizing tools such as SolidWorks Motion, Simulink, and MATLAB.}               \\
-	\details{Developed trajectory generation algorithms, ensuring precise and efficient motion planning, tailored based on robot's specifications.}                                                                                        \\
-	\details{Devised a vision-based calibration process to enhance the accuracy and calibration of the robots.}                                                                                                                            \\
-	\details{Employed various communication protocols, including CANOpen, EtherCAT, Profibus, and RS-485, to effectively control different servo drives.}                                                                                  \\
-	}                                                                                                                                                                                                                                      \\
+	\details{Led a team of ten mechanical and software engineers in developing a real-time software system from scratch, encompassing program parsing, motion generation, interrupt handling, and IO control for the robots.}      \\
+	\details{Designed, analyzed, and developed C++ software on Beckhoff controller for a range of industrial-grade robots, including models such as FUM-6R-20, FUM-SCARA-V2, FUM-Stewart-M450, FUM-Stewart-2500kg, and FUM-Delta.} \\
+	\details{Conducted kinematics and dynamics analysis, as well as simulation verification, for ten distinct industrial-grade serial and parallel robots, utilizing tools such as SolidWorks Motion, Simulink, and MATLAB.}       \\
+	\details{Developed trajectory generation algorithms, ensuring precise and efficient motion planning tailored to the robot's specifications.}                                                                                   \\
+	\details{Devised a vision-based calibration process to enhance the accuracy and calibration of the robots.}                                                                                                                    \\
+	\details{Employed various communication protocols, including CANOpen, EtherCAT, Profibus, and RS-485, to effectively control different servo drives.}                                                                          \\
+	}                                                                                                                                                                                                                              \\
 	\makecell[tr]{
 		\jobtitle{CEO and Co-Founder}
 		\company{Mutau Co.}
@@ -100,21 +111,10 @@
 		\companylink{https://mutau.ir/}{mutau.ir}
 	} &
 	\makecell[tl]{
-	\details{Played a key role in guiding the company to achieve significant sales and revenue growth by exploring new market opportunities and diversifying our product line.}                                                            \\
-	\details{Collaboratively led R\&D efforts that resulted in the development of an advanced 3D printer model, contributing to the company's reputation as an emerging leader in the industry.}                                           \\
-	\details{Prioritized employee well-being and streamlined operations, leading to improved workplace satisfaction and increased efficiency, helping us achieve notable cost savings in production.}                                      \\[0.3cm]
+	\details{Played a key role in guiding the company to achieve significant sales and revenue growth by exploring new market opportunities and diversifying our product line.}                                                    \\
+	\details{Collaboratively led R\&D efforts that resulted in the development of an advanced 3D printer model, contributing to the company's reputation as an emerging leader in the industry.}                                   \\
+	\details{Prioritized employee well-being and streamlined operations, improving workplace satisfaction and increased efficiency, helping us achieve notable cost savings in production.}                                        \\[0.3cm]
 	}
-\end{tabularx}
-
-\header{Skills}\\
-\begin{tabularx}{\textwidth}{rXrXrX}
-	\skilltitle{Technical Skills} &           & \skilltitle{Technical Skills} &           & \skilltitle{Soft Skills} &           \\
-	C/C++                       & \skill{5} & MATLAB                      & \skill{5} & Teamwork               & \skill{5} \\
-	ROS2                        & \skill{5} & Simulink                    & \skill{5} & Creative Thinking      & \skill{5} \\
-	Embedded Systems            & \skill{5} & Python                      & \skill{5} & Project Management     & \skill{5} \\
-	SolidWorks                  & \skill{5} & CUDA                        & \skill{4} & Leadership             & \skill{5} \\
-	Linux                       & \skill{4} & OpenGL                      & \skill{3} & Strategic Planning     & \skill{4} \\
-	Git                         & \skill{4} &                             &           &                        & \\
 \end{tabularx}
 
 \newpage
@@ -123,22 +123,33 @@
 \end{tabularx}\\
 \noindent\rule{\textwidth}{0.4pt}
 
+\header{Skills}\\
+\begin{tabularx}{\textwidth}{rXrXrX}
+	\skilltitle{Technical Skills} &           & \skilltitle{Technical Skills} &           & \skilltitle{Soft Skills} &           \\
+	C/C++                         & \skill{5} & MATLAB                        & \skill{5} & Teamwork                 & \skill{5} \\
+	ROS2                          & \skill{5} & Simulink                      & \skill{5} & Creative Thinking        & \skill{5} \\
+	Embedded Systems              & \skill{5} & Python                        & \skill{5} & Project Management       & \skill{5} \\
+	SolidWorks                    & \skill{5} & CUDA                          & \skill{4} & Leadership               & \skill{5} \\
+	Linux                         & \skill{4} & OpenGL                        & \skill{3} & Strategic Planning       & \skill{4} \\
+	Git                           & \skill{4} &                               &           &                          &           \\
+\end{tabularx}
+
 \header{Education}\\
 \begin{tabularx}{\textwidth}{>{\hsize=.25\textwidth}XX}
-	\makecell[tr]{\jobtitle{Ph.D. in Mechanical Engineering}\company{OntarioTech University}\companydate{2021-now}} & \details{Autonomous excavators on construction sites. Perception, control, motion-planning, and safety.}\\[0.6cm]
-	\makecell[tr]{\jobtitle{M.Sc. in Mechanical Engineering}\company{Ferdowsi University}\companydate{2010-2013}} & \details{A real-time method to calculate the inverse dynamics equations of a three DOF parallere 3-PSP robot.}\\[0.6cm]
+	\makecell[tr]{\jobtitle{Ph.D. in Mechanical Engineering}\company{OntarioTech University}\companydate{2021-now}}   & \details{Autonomous excavators on construction sites. Perception, control, motion-planning, and safety.}      \\[0.6cm]
+	\makecell[tr]{\jobtitle{M.Sc. in Mechanical Engineering}\company{Ferdowsi University}\companydate{2010-2013}}     & \details{A real-time method to calculate the inverse dynamics equations of a three DOF parallel 3-PSP robot.} \\[0.6cm]
 	\makecell[tr]{\jobtitle{B.Sc. in Mechanical Engineering}\company{Islamic Azad University}\companydate{2007-2009}} & \details{Developed a multi-DOF four-bar mechanism to follow the desired trajectory.}
 \end{tabularx}\\
 
 \header{Publications and Patents}\\
 \begin{tabularx}{\textwidth}{>{\hsize=.25\textwidth}XX}
-	\makecell[tr]{\company{Agriculture}\companydate{2022}} & \details{Optimal Path Generation with Obstacle Avoidance and Subfield Connection for an Autonomous Tractor}\\
-	\makecell[tr]{\company{1st IECMA}\companydate{2022}} & \details{A real-time estimation method of soil-bucket interaction of an autonomous excavator via marching cube and constructive solid geometry methods}\\
-	\makecell[tr]{\company{8th ECSA}\companydate{2021}} & \details{Collaborative tracking control strategy for autonomous excavation of a hydraulic excavator}\\
-	\makecell[tr]{\company{8th ECSA}\companydate{2021}} & \details{Surface Reconstruction for Ground Map Generation in Autonomous Excavation}\\
-	\makecell[tr]{\company{5th ICRoM}\companydate{2017}} & \details{Explicit Inverse Kinematic Solution for the Industrial FUM Articulated Arm using Dual Quaternion Approach}\\
-	\makecell[tr]{\company{AMM}\companydate{2015}} & \details{Effect of Link Tolerance and Joint Clearance on End-Effector Positioning of the 3-PSP Manipulator Using Taguchi Method}\\
-	\makecell[tr]{\company{Patent}\companydate{2012}} & \details{Design a 3-Axis CNC with Laser CMM Ability}\\
+	\makecell[tr]{\company{Agriculture}\companydate{2022}} & \details{Optimal Path Generation with Obstacle Avoidance and Subfield Connection for an Autonomous Tractor}                                             \\
+	\makecell[tr]{\company{1st IECMA}\companydate{2022}}   & \details{A real-time estimation method of soil-bucket interaction of an autonomous excavator via marching cube and constructive solid geometry methods} \\
+	\makecell[tr]{\company{8th ECSA}\companydate{2021}}    & \details{Collaborative tracking control strategy for autonomous excavation of a hydraulic excavator}                                                    \\
+	\makecell[tr]{\company{8th ECSA}\companydate{2021}}    & \details{Surface Reconstruction for Ground Map Generation in Autonomous Excavation}                                                                     \\
+	\makecell[tr]{\company{5th ICRoM}\companydate{2017}}   & \details{Explicit Inverse Kinematic Solution for the Industrial FUM Articulated Arm using Dual Quaternion Approach}                                     \\
+	\makecell[tr]{\company{AMM}\companydate{2015}}         & \details{Effect of Link Tolerance and Joint Clearance on End-Effector Positioning of the 3-PSP Manipulator Using Taguchi Method}                        \\
+	\makecell[tr]{\company{Patent}\companydate{2012}}      & \details{Design a 3-Axis CNC with Laser CMM Ability}                                                                                                    \\
 \end{tabularx}\\
 
 \end{document}
