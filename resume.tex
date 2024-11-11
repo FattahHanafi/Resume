@@ -17,6 +17,9 @@
 \usepackage{pgffor}
 \usepackage{xifthen}
 \usepackage{hyperref}
+
+\usepackage{hyphenat}
+
 \hypersetup{%
   colorlinks=true,% hyperlinks will be black
   urlcolor=blue,
@@ -39,7 +42,7 @@
 \newcommand{\company}[1]{\makecell[Xr]{\noindent\textcolor{Black}{\footnotesize{#1}}}}
 \newcommand{\companydate}[1]{\makecell[Xr]{\noindent\textcolor{Black}{\footnotesize{ - (#1)}}}\\}
 \newcommand{\companylink}[2]{\makecell[Xr]{\noindent\href{#1}{\footnotesize{#2}}}\\}
-\newcommand{\details}[1]{\makecell[Xt]{\noindent\textcolor{Black}{\footnotesize{\faChevronRight\hspace{0.05cm} #1}}}}
+\newcommand{\details}[1]{\makecell[Xt]{\noindent\textcolor{Black}{\footnotesize{\faChevronRight\hspace{0.05cm} \nohyphens{#1}}}}}
 \newcommand{\skill}[1]{\foreach \x in {0,...,4}{\ifthenelse{\x < #1}{\faStar}{\textcolor{gray}\faStarO}}}
 
 \begin{document}
@@ -54,16 +57,30 @@
 \header{Experience}
 \begin{tabularx}{\textwidth}{>{\hsize=.25\textwidth}XX}
 	\makecell[tr]{
+		\jobtitle{Senior Robotics Engineer}
+		\company{BHF Solutions Inc.}
+		\companydate{2024-now}
+		\companylink{https://bhfsolution.com/}{bhfsolution.com}
+	} &
+	\makecell[tl]{
+	\details{Lead a team of Mechanical and Software engineers to develop, prototype, and test a custom autonomous platform with embedded Delta robot to eradicate weeds.} \\
+	\details{Implemeted a real-time applicaiton using embedded systems to control the Delta robot and the machine.} \\
+	\details{Included RGB-D cameras, LiDAR, and IMU for local and global path planning and localization.} \\
+	\details{Utilized CUDA programming to accelerate the control algorithms.} \\
+	\details{Tested, and validated the performance of the developed algorithm on the actual hardware containing a Jetson series Hardware and Industrial PC.} \\
+	\details{Successfully developed a custom appkication platform icluding software development, testing, calibration, validation, and mechancal analysis throughout the field tests.} \\
+	\details{Designed a custom application machine to increase the efficiency of the system by combining the software, and hardware capabilities.} \\[0.3cm]
+	} \\
+	\makecell[tr]{
 		\jobtitle{Mechatronic Engineer}
 		\company{Halo Beauty Co,}
 		\companydate{2023-2024}
 		\companylink{https://www.halobraid.com/}{halobraid.com}
 	} &
 	\makecell[tl]{
-	\details{Designed a microactuator to automate the hair-grabbing process.    }                                                                                                                                                  \\
-	\details{Improved the quality and speed of hair braiding by implementing the fully automated process.}                                                                                                                         \\
-	\details{Mechanically designed the actuator for R\&D process and prepared the manufacturing drafts for mass production.}                                                                                                       \\[0.3cm]
-	}                                                                                                                                                                                                                              \\
+	\details{Engineered a microactuator to automate the hair-grabbing process, improving braiding quality and efficiency.} \\
+	\details{Led mechanical design for R\&D and created detailed manufacturing drafts, preparing the actuator for mass production.} \\
+	} \\
 	\makecell[tr]{
 		\jobtitle{Research Assistant}
 		\company{AVEC Lab}
@@ -71,12 +88,12 @@
 		\companylink{https://www.avec-lab.com/}{avec-lab.com}
 	} &
 	\makecell[tl]{
-	\details{Utilized C++ programming to develop and implement real-time applications on a dSpace embedded controller, enabling autonomous control of mobile excavators at construction sites.	}                                   \\
-	\details{Designed and implemented a real-time perception algorithm that effectively combines LiDAR and depth camera sensor data to capture and analyze the surrounding environment using PCL and OpenCV.}                      \\
-	\details{Created a customized ROS2 package to provide comprehensive visualization, monitoring, and control capabilities for the excavators.}                                                                                   \\
-	\details{Developed a customized GUI software using OpenGL to establish communication with an embedded controller via UDP, enabling comprehensive control of excavator operations.}                                             \\
-	\details{Developed a Python program capable of real-time route optimization in obstacle-filled environments, enhancing operational efficiency.}                                                                                \\[0.3cm]
-	}                                                                                                                                                                                                                              \\
+	\details{Developed real-time applications in C++ on dSpace embedded controllers for autonomous mobile excavators.} \\
+	\details{Designed a perception algorithm combining LiDAR and depth camera data using PCL and OpenCV for environmental analysis.} \\
+	\details{Created a ROS2 package enabling visualization, monitoring, and control of excavator operations.} \\
+	\details{Built a custom GUI with OpenGL for UDP-based communication, supporting extensive excavator control.} \\
+	\details{Developed a Python-based route optimization program, enhancing efficiency in obstacle-filled environments.} \\
+	} \\
 	\makecell[tr]{
 		\jobtitle{Engineering Team Manager}
 		\company{C1-Tech}
@@ -84,26 +101,24 @@
 		\companylink{https://www.c1tech.co}{c1tech.co}
 	} &
 	\makecell[tl]{
-	\details{Designed and developed an advanced automation panel for surgery operation rooms, enabling centralized control of temperature, lighting, humidity, curtains, and inter-communication systems.}                         \\
-	\details{Successfully marketed and sold the developed automation panel to seven hospitals, resulting in installations across more than 60 operation rooms.}                                                                    \\[0.3cm]
-	}                                                                                                                                                                                                                              \\
+	\details{Designed an automation panel for operating rooms, enabling centralized control over temperature, lighting, humidity, curtains, and intercom systems.} \\
+	\details{Marketed and installed the panel in seven hospitals, covering over 60 operation rooms.} \\
+	} \\
 	\makecell[tr]{
 		\jobtitle{Robotics Team Manager}
 		\company{Hamgar Toos Co.}
 		\companydate{2016-2018}
-		\companylink{http://en.hamgartoos.com/}{en.hamgartoos.com}
+		\companylink{http://hamgartoos.com/}{hamgartoos.com}
 		\company{FUM Robotics Lab}
 		\companydate{2012-2016}
 		\companylink{https://www.fum-care.com/}{fum-care.com}
 	} &
 	\makecell[tl]{
-	\details{Led a team of ten mechanical and software engineers in developing a real-time software system from scratch, encompassing program parsing, motion generation, interrupt handling, and IO control for the robots.}      \\
-	\details{Designed, analyzed, and developed C++ software on Beckhoff controller for a range of industrial-grade robots, including models such as FUM-6R-20, FUM-SCARA-V2, FUM-Stewart-M450, FUM-Stewart-2500kg, and FUM-Delta.} \\
-	\details{Conducted kinematics and dynamics analysis, as well as simulation verification, for ten distinct industrial-grade serial and parallel robots, utilizing tools such as SolidWorks Motion, Simulink, and MATLAB.}       \\
-	\details{Developed trajectory generation algorithms, ensuring precise and efficient motion planning tailored to the robot's specifications.}                                                                                   \\
-	\details{Devised a vision-based calibration process to enhance the accuracy and calibration of the robots.}                                                                                                                    \\
-	\details{Employed various communication protocols, including CANOpen, EtherCAT, Profibus, and RS-485, to effectively control different servo drives.}                                                                          \\
-	}                                                                                                                                                                                                                              \\
+	\details{Led a team of 10 engineers in developing real-time software systems for industrial robots, covering motion generation, I/O control, and program parsing.} \\
+	\details{Developed C++ software on Beckhoff controllers for robots like FUM-6R-20 and FUM-SCARA-V2.} \\
+	\details{Conducted kinematic and dynamic analysis, validated simulations, and optimized motion planning using SolidWorks Motion, Simulink, and MATLAB.} \\
+	\details{Implemented vision-based calibration processes and communication protocols (CANOpen, EtherCAT, Profibus, RS-485) for servo drive control.} \\
+	} \\
 	\makecell[tr]{
 		\jobtitle{CEO and Co-Founder}
 		\company{Mutau Co.}
@@ -111,9 +126,9 @@
 		\companylink{https://mutau.ir/}{mutau.ir}
 	} &
 	\makecell[tl]{
-	\details{Played a key role in guiding the company to achieve significant sales and revenue growth by exploring new market opportunities and diversifying our product line.}                                                    \\
-	\details{Collaboratively led R\&D efforts that resulted in the development of an advanced 3D printer model, contributing to the company's reputation as an emerging leader in the industry.}                                   \\
-	\details{Prioritized employee well-being and streamlined operations, improving workplace satisfaction and increased efficiency, helping us achieve notable cost savings in production.}                                        \\[0.3cm]
+	\details{Drove revenue growth by exploring new markets and expanding product offerings.} \\
+	\details{Led R\&D to create an advanced 3D printer model, positioning the company as a rising industry leader.} \\
+	\details{Enhanced employee satisfaction and operational efficiency, achieving notable production cost savings.} \\
 	}
 \end{tabularx}
 
@@ -132,7 +147,7 @@
 	SolidWorks                    & \skill{5} & CUDA                          & \skill{4} & Leadership               & \skill{5} \\
 	Linux                         & \skill{4} & OpenGL                        & \skill{3} & Strategic Planning       & \skill{4} \\
 	Git                           & \skill{4} &                               &           &                          &           \\
-\end{tabularx}
+\end{tabularx}\\
 
 \header{Education}\\
 \begin{tabularx}{\textwidth}{>{\hsize=.25\textwidth}XX}
@@ -143,6 +158,7 @@
 
 \header{Publications and Patents}\\
 \begin{tabularx}{\textwidth}{>{\hsize=.25\textwidth}XX}
+	\makecell[tr]{\company{Automation in Construction}\companydate{2024}} & \details{RGB-LiDAR sensor fusion for dust de-filtering in autonomous excavation applications}                                             \\
 	\makecell[tr]{\company{Agriculture}\companydate{2022}} & \details{Optimal Path Generation with Obstacle Avoidance and Subfield Connection for an Autonomous Tractor}                                             \\
 	\makecell[tr]{\company{1st IECMA}\companydate{2022}}   & \details{A real-time estimation method of soil-bucket interaction of an autonomous excavator via marching cube and constructive solid geometry methods} \\
 	\makecell[tr]{\company{8th ECSA}\companydate{2021}}    & \details{Collaborative tracking control strategy for autonomous excavation of a hydraulic excavator}                                                    \\
